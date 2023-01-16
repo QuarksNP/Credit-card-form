@@ -50,7 +50,7 @@
     align-items: center;
     width: 447px;
     height: 245px;
-    background: url("/public/images/bg-card-front.png");
+    background: url("bg-card-front.png");
     background-size: cover;
 }
 
