@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/card_form/public/images/credit-card-icon_orig.png">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <title>Interactive card details form</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+
+            <slide class="container-slide">
+                <img id="slide" src='/card_form/public/images/bg-main-desktop.png'>
+            </slide>
+
+            <section class="container-cards">
+                <div class="front-card">
+                   <div class="container-frontCard">
+                       <div class="circles"></div>
+                       <input  id="number-card" type="text" class="card" placeholder="0000 0000 0000 0000">
+
+                       <div class="description-front-card">
+                           <input type="text" placeholder="JANE APPLESEED" class="card">
+                           <input id="date-front-card" type="text" class="card" placeholder="00/00">
+                       </div>
+                   </div>
+                </div>
+                <div class="back-card">
+                    <input id="CVC-back-card" type="number" placeholder="000" class="card">
+                </div>
+            </section>
+
+            <section id="container-information">
+                <form class="form-card" action="">
+
+                    <div class="card-number">
+                        <label>CARD NUMBER</label>
+                        <div class="message">
+                            <input class="data-card" id="card-number" type="text" ondrop="return false;"
+                                   onpaste="return false;" onkeypress="return event.charCode>=48 && event.charCode<=57"
+                                   placeholder="e.g. 1234 5678 9123 0000" autocomplete="cc-number" maxlength="19"
+                                    required>
+                            <i></i>
+                        </div>
+                        <p id="numberCard-error" class="data-error"></p>
+                    </div>
+
+                    <div class="name">
+                        <label>CARDHOLDER NAME</label>
+                        <div class="message">
+                            <input class="data-card" type="text" name="full-name"
+                                   placeholder="e.g. Jane Appleseed" autocomplete="cc-name" minlength="1" required>
+                            <i></i>
+                        </div>
+                        <p id="fullName-error" class="data-error"></p>
+                    </div>
+
+                    <div class="description">
+                        <div class="exp-date">
+                                <label>EXP. DATE (MM/YY)</label>
+                                <div class="message">
+                                    <input class="data-card" id="input-date" name="month-year" type="text" maxlength="5"
+                                           placeholder="MM/YY" minlength="5" autocomplete="cc-exp"
+                                           ondrop="return false;"
+                                           onpaste="return false;"
+                                           onkeypress="return event.charCode>=48 && event.charCode<=57" required="required">
+                                    <i></i>
+                                </div>
+                                <p class="data-error"></p>
+                        </div>
+
+                        <div class="cvc">
+                            <label>CVC</label>
+                            <div class="message">
+                                <input ondrop="return false;" onpaste="return false;" autocomplete="cc-csc"
+                                       onkeypress="return event.charCode>=48 && event.charCode<=57"class="data-card"
+                                       id="input-cvc" type="text" name="cvc" maxlength="3" minlength="3"
+                                       placeholder="e.g. 123" required="required">
+                                <i></i>
+                            </div>
+                            <p class="data-error" id="error-cvc"></p>
+                        </div>
+                    </div>
+
+                    <button id="btn-verified" type="submit">Confirm</button>
+                </form>
+            </section>
+
+            <section class="container-verified">
+                <div id="verified">
+                    <img src="/public/images/icon-complete.svg">
+                    <p>THANK YOU!</p>
+                    <p>We've added your card details</p>
+                    <button  id="btn-continue" type="button"> Continue</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/0095120013.js" crossorigin="anonymous"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+
+</html>
